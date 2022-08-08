@@ -1,6 +1,7 @@
 <template>
   <div class="app">
-    <TweetC />
+    <TweetC v-for="tweet in tweets"  :tweet="tweet"
+    :key="tweet.id" />
   </div>
 </template>
 
