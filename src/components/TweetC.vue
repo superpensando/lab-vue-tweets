@@ -1,32 +1,20 @@
 <template>
   <div className="tweet">
-    <img
-      className="profile"
-      alt="profile"
-      :src="tweet.user.image"
-    />
+
+    <ProfileImageC :ProfileImageSrc="tweet.user.image" />
 
     <div className="body">
       <div className="top">
-        <span className="user">
-          <span className="name">{{ tweet.user.name }}</span>
-          <span className="handle">{{ tweet.user.handle}}</span>
-        </span>
 
-        <span className="timestamp">{{ tweet.timeStamp }}</span>
+        <UserC :name="tweet.user.name" :handle="tweet.user.handle" />
+
+        <TimestampC :timeStamp="tweet.timestamp" />
+
       </div>
 
-      <p className="message">
-        {{ tweet.message }}
-      </p>
+      <MessageC :message="tweet.message" />
 
-      <div className="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <ActionsC />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
@@ -34,16 +22,24 @@
 </template>
 
 <script>
+import ProfileImageC from './ProfileImageC.vue';
+import TimestampC from './TimestampC.vue';
+import MessageC from './MessageC.vue';
+import UserC from './UserC.vue';
+import ActionsC from './ActionsC.vue';
+
 export default {
-    name: 'TweetC',
-    props: {
-        tweet:Object
-    },
+  name: "TweetC",
+  props: {
+    tweet: Object
+  },
+  components: { TimestampC, MessageC, ProfileImageC, UserC, ActionsC }
 }
+
 </script>
 
 <style lang="scss">
-  a {
-    color: #42b983;
-  }
+a {
+  color: #42b983;
+}
 </style>
