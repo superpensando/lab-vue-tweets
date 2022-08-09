@@ -3,11 +3,11 @@
 </template>
 
 <script>
-export default {    
-    name: 'TimestampC',
-     props: {
-         timeStamp: String,
-    },
+export default {
+  name: 'TimestampC',
+  props: {
+    timeStamp: String,
+  },
 }
-   
+
 </script>

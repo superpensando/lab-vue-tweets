@@ -1,17 +1,13 @@
 <template>
-   <img
-      className="profile"
-      alt="profile"
-      :src="ProfileImageSrc"
-    />
+    <img className="profile" alt="profile" :src="ProfileImageSrc" />
 </template>
 
 <script>
-export default {    
+export default {
     name: 'ProfileImageC',
-     props: {
-         ProfileImageSrc: String,
+    props: {
+        ProfileImageSrc: String,
     },
 }
-   
+
 </script>
